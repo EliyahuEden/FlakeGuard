@@ -1,0 +1,29 @@
+[
+  {
+    "file": "commerceguard-regression.json",
+    "source_relative_path": "docs/evidence/redesign/regression-verified-raw.json",
+    "original_sha256": "83eaedb1ed29cd7f05603c1030759282cc018fa1f0fc99b1eadf5ff5535418aa",
+    "provenance": "real",
+    "executions": 117,
+    "report_timestamp": "2026-11-12T14:30:25.900000+00:00",
+    "note": "Sanitized projection of an existing actual CommerceGuard Playwright execution. Not rerun by FlakeGuard; browser not inferred from project name."
+  },
+  {
+    "file": "commerceguard-injected.json",
+    "source_relative_path": "docs/evidence/redesign/defects/CG-D01/injected/results.json",
+    "original_sha256": "7b94ffc60fffe4a810e49a6b4a2ce82ab2ba7eb6e0953ef3bf2b34ab7e7af662",
+    "provenance": "injected",
+    "executions": 1,
+    "report_timestamp": "2026-11-12T03:30:31.368000+00:00",
+    "note": "Sanitized projection of an existing actual CommerceGuard Playwright execution. Not rerun by FlakeGuard; browser not inferred from project name."
+  },
+  {
+    "file": "commerceguard-restored.json",
+    "source_relative_path": "docs/evidence/redesign/defects/CG-D01/restored/results.json",
+    "original_sha256": "70fae3ebe65163aacfd043045bb0c724c5e139cb2eda8b3373e0646d692a9982",
+    "provenance": "real",
+    "executions": 1,
+    "report_timestamp": "2026-11-12T03:32:20.437000+00:00",
+    "note": "Sanitized projection of an existing actual CommerceGuard Playwright execution. Not rerun by FlakeGuard; browser not inferred from project name."
+  }
+]

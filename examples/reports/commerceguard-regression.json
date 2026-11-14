@@ -1,0 +1,3647 @@
+{
+  "config": {
+    "rootDir": ".",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "api",
+        "name": "api",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "integration",
+        "name": "integration",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/integration/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "mobile-chromium",
+        "name": "mobile-chromium",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "api",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/api/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "api"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "integration",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/integration/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "integration"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "chromium",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "firefox",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:159.0) Gecko/20100101 Firefox/159.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "webkit",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1792,
+            "height": 1120
+          },
+          "deviceScaleFactor": 2,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "mobile-chromium",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Mobile Safari/537.36",
+          "viewport": {
+            "width": 412,
+            "height": 839
+          },
+          "screen": {
+            "width": 412,
+            "height": 915
+          },
+          "deviceScaleFactor": 2.625,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile-chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/redesign/regression-verified-raw.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": ".runtime/verified/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [
+      "@regression"
+    ],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api\\cart.spec.ts",
+      "file": "api/cart.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "API-007 R-CART an empty cart starts at zero @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 350,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:26.998Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-fdc7869a355d9e3ea5c4",
+          "file": "api/cart.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "API-008 R-CART quantity multiplies unit price exactly @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1002,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:26.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-becdb216fbbaa4f8b53e",
+          "file": "api/cart.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "API-009 R-CART updating quantity recalculates totals",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1105,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:27.409Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-c868d27404454535a482",
+          "file": "api/cart.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "API-010 R-CART removing the final item returns the cart to zero",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 660,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:28.060Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-72c21da8435c7854ea13",
+          "file": "api/cart.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "API-Q0 R-INVENTORY rejects invalid add quantity 0",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 249,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:28.543Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-964e9c4d685f22f51e35",
+          "file": "api/cart.spec.ts",
+          "line": 52,
+          "column": 3
+        },
+        {
+          "title": "API-Q-1 R-INVENTORY rejects invalid add quantity -1",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 243,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:28.751Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-c899172ef5f4b55d6835",
+          "file": "api/cart.spec.ts",
+          "line": 52,
+          "column": 3
+        },
+        {
+          "title": "API-013 R-INVENTORY fractional input must be rejected or preserved without silent coercion @product-bug",
+          "ok": false,
+          "tags": [
+            "regression",
+            "product-bug"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 519,
+                  "error": {
+                    "message": "Error: CG-B001: accepted buyer quantity must not be silently rounded\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1.5\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                    "stack": "Error: CG-B001: accepted buyer quantity must not be silently rounded\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1.5\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at <commerceguard>\\api\\cart.spec.ts:81:7",
+                    "location": {
+                      "file": "<commerceguard>\\api\\cart.spec.ts",
+                      "column": 7,
+                      "line": 81
+                    }
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<commerceguard>\\api\\cart.spec.ts",
+                        "column": 7,
+                        "line": 81
+                      },
+                      "message": "Error: CG-B001: accepted buyer quantity must not be silently rounded\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1.5\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  79 |       cart.items[0].quantity,\n  80 |       \"CG-B001: accepted buyer quantity must not be silently rounded\",\n> 81 |     ).toBe(1.5)\n     |       ^\n  82 |     expect(cart.total).toBe(seed.unitPrice * 1.5)\n  83 |   }\n  84 | })\n    at <commerceguard>\\api\\cart.spec.ts:81:7"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:28.813Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<commerceguard>\\.runtime\\verified\\artifacts\\api-cart-API-013-R-INVENTO-a6fef-silent-coercion-product-bug-api\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "<commerceguard>\\.runtime\\verified\\artifacts\\api-cart-API-013-R-INVENTO-a6fef-silent-coercion-product-bug-api\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<commerceguard>\\api\\cart.spec.ts",
+                    "column": 7,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-26499f9bf160f5bb3c9a",
+          "file": "api/cart.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "API-014 R-INVENTORY stock overflow is rejected without cart changes",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 488,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:29.015Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-c5a6903183380118d3df",
+          "file": "api/cart.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "API-015 R-ERROR missing variant is a validation error",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 301,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:30.308Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-f6b4d19959ac8a24e532",
+          "file": "api/cart.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "API-016 R-CART repeated add requests merge quantity rather than duplicate lines",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 667,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:29.527Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-688966478f5a5a3e2fcb",
+          "file": "api/cart.spec.ts",
+          "line": 108,
+          "column": 1
+        },
+        {
+          "title": "API-017 R-PROMO ten percent promotion uses item subtotal @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 573,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:30.213Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-508948630fac7470baf8",
+          "file": "api/cart.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "API-018 R-PROMO applying the same promotion twice does not stack discounts",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 880,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:30.678Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-c040f73f696a900ec1d5",
+          "file": "api/cart.spec.ts",
+          "line": 131,
+          "column": 1
+        },
+        {
+          "title": "API-019 R-PROMO unknown promotion grants no discount",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 583,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:30.802Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1db9e30f95e5409277a9-a8b29f101c5aea758eca",
+          "file": "api/cart.spec.ts",
+          "line": 146,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "api\\catalog.spec.ts",
+      "file": "api/catalog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "API-001 R-CATALOG catalog contract and indexed titles and images agree @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 169,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.406Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aba51760a54b8829c7a1-bb4d61805b4d05f05dc7",
+          "file": "api/catalog.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "API-002 R-CATALOG variant price is calculated for the seeded region @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 102,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.600Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aba51760a54b8829c7a1-ab46bfbcde0e9260a1e9",
+          "file": "api/catalog.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "API-003 R-CATALOG text query excludes unrelated products",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 101,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.592Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aba51760a54b8829c7a1-00af7a5b6b3cd4eb6249",
+          "file": "api/catalog.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "API-004 R-CATALOG pagination returns distinct records and stable count",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 123,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aba51760a54b8829c7a1-d013451f961ba9051a9c",
+          "file": "api/catalog.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "API-005 R-ERROR unknown product returns a structured 404",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 42,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.721Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aba51760a54b8829c7a1-11436e22c137f6a6de6a",
+          "file": "api/catalog.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "API-006 R-ACCESS store catalog rejects requests without a publishable key",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.783Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aba51760a54b8829c7a1-6ab04386db5eb3e2a61a",
+          "file": "api/catalog.spec.ts",
+          "line": 104,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "api\\checkout.spec.ts",
+      "file": "api/checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "API-028 R-ORDER checkout creates an order with correct items and totals @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2602,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.851Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef4fd48f5d73a8a80cff-d7903890a04ac83e383d",
+          "file": "api/checkout.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "API-029 R-ORDER completing the same cart twice returns the same order",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2781,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:31.851Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef4fd48f5d73a8a80cff-3bae5af942efe2306df7",
+          "file": "api/checkout.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "API-030 R-ORDER incomplete checkout returns an error without order data",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 614,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:34.467Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef4fd48f5d73a8a80cff-875806324f4bb65b25c4",
+          "file": "api/checkout.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "API-031 R-ACCOUNT authenticated order history includes only the owner order",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2657,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:34.644Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef4fd48f5d73a8a80cff-f232cbe1fac176b3f381",
+          "file": "api/checkout.spec.ts",
+          "line": 37,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "api\\customer.spec.ts",
+      "file": "api/customer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "API-020 R-AUTH customer registration and login establish the correct identity @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 398,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:35.101Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-396eabea6a6082aff3d1",
+          "file": "api/customer.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "API-021 R-AUTH wrong password returns 401",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 528,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:35.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-70e5029268e239f9bea9",
+          "file": "api/customer.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "API-022 R-AUTH duplicate registration cannot create another identity",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 426,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:36.051Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-fb4b570b3cdb92fad294",
+          "file": "api/customer.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "API-023 R-ACCESS anonymous customer access is denied @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:36.492Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-04acc0fbba23017c2dac",
+          "file": "api/customer.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "API-024 R-ACCESS forged token cannot read customer data",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:36.532Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-d4eef0d48f433c9501e8",
+          "file": "api/customer.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "API-025 R-ACCOUNT profile updates persist for that customer only",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 835,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:36.562Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-ea53966fe90494ca3212",
+          "file": "api/customer.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "API-026 R-ACCESS another customer cannot delete an owned address",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 806,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:37.334Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-d5ca3781c95ceeb46415",
+          "file": "api/customer.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "API-027 R-ACCESS customer token cannot use admin product endpoints",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 362,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:37.411Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "166cf7d1ad194019f401-82f8ea2bc493c0782e54",
+          "file": "api/customer.spec.ts",
+          "line": 87,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "integration\\consistency.spec.ts",
+      "file": "integration/consistency.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "integration",
+              "projectName": "integration",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7560,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:38.626Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6af49d9f7095aeaa51fc-209f049a94ca0e726b2c",
+          "file": "integration/consistency.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "INT-002 R-PROMO promotion adjustment SQL matches API and expected discount",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "integration",
+              "projectName": "integration",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 921,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:39.043Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6af49d9f7095aeaa51fc-f4959346c5f3ebe0ab88",
+          "file": "integration/consistency.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "INT-003 R-INVENTORY rejected stock overflow writes no cart line",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "integration",
+              "projectName": "integration",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 516,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:40.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6af49d9f7095aeaa51fc-1e4bc2778ada6388ca47",
+          "file": "integration/consistency.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "integration",
+              "projectName": "integration",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2671,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:40.564Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6af49d9f7095aeaa51fc-7731781cf66428aacc16",
+          "file": "integration/consistency.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "INT-005 R-ORDER repeat completion preserves one order for the cart",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "integration",
+              "projectName": "integration",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3197,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:43.255Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6af49d9f7095aeaa51fc-52b1f28d20d6f5164cbb",
+          "file": "integration/consistency.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "INT-006 R-ORDER failed completion has no order link and leaves cart incomplete",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "integration",
+              "projectName": "integration",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 770,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:46.355Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6af49d9f7095aeaa51fc-66b68493fa3479c0ded3",
+          "file": "integration/consistency.spec.ts",
+          "line": 117,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "ui\\storefront.spec.ts",
+      "file": "ui/storefront.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8617,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:47.734Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 18588,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:27.468Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9032,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:12.945Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6106,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:17.318Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-0e6e40bdd153eaa3991e",
+          "file": "ui/storefront.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "UI-002 R-INVENTORY selecting a variant updates availability and selected options",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5156,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:48.587Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11800,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:32.792Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7603,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:20.224Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4190,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:23.744Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-6a21f6f2c260105a6822",
+          "file": "ui/storefront.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11090,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:54.084Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14720,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:45.401Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18374,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:24.431Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10406,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:23.871Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-3fd075009e2f9b699195",
+          "file": "ui/storefront.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "UI-004 R-CART quantity update recalculates displayed total",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8044,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:30:56.572Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11107,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:48.424Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 16184,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:28.025Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7237,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:28.294Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-c8d5da6c129725259c21",
+          "file": "ui/storefront.spec.ts",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7049,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:04.641Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10218,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:59.551Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6928,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:42.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5709,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:34.302Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-053b976a22395cb25ca0",
+          "file": "ui/storefront.spec.ts",
+          "line": 73,
+          "column": 1
+        },
+        {
+          "title": "UI-006 R-CART deleting the last item displays an empty cart",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6141,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:05.200Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9678,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:00.146Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6240,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:44.239Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4785,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:35.556Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-0a4df45eb48147434e5a",
+          "file": "ui/storefront.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6103,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:11.363Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8255,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:09.796Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7494,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:49.788Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5221,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:40.041Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-82651c9db31f2c8721d9",
+          "file": "ui/storefront.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "UI-008 R-PROMO removing promotion restores full price",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5787,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:11.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8209,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:09.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7063,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:50.501Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4917,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:40.358Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-98f22fda32a8e3fd18d6",
+          "file": "ui/storefront.spec.ts",
+          "line": 123,
+          "column": 1
+        },
+        {
+          "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6383,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:17.487Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 15072,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:18.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6973,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:57.302Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5470,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:45.287Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-c7d32807cea675ee387d",
+          "file": "ui/storefront.spec.ts",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "UI-010 R-ERROR search with no matching product shows empty state",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5663,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:17.519Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10534,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:18.091Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5876,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:57.588Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4479,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:45.295Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-7d6948407cb7c74c3196",
+          "file": "ui/storefront.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "UI-011 R-CATALOG category filter restricts the catalog",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11789,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:23.205Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26362,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:28.646Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8407,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:03.483Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3456,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:49.792Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-6bf02c0405163117ba22",
+          "file": "ui/storefront.spec.ts",
+          "line": 165,
+          "column": 1
+        },
+        {
+          "title": "UI-012 R-AUTH registration creates a usable customer account",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14658,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:23.896Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 30579,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:33.174Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11511,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:04.295Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5442,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:50.774Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-4acb881616ec4c81fbe3",
+          "file": "ui/storefront.spec.ts",
+          "line": 182,
+          "column": 1
+        },
+        {
+          "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5724,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:35.018Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8209,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:33:55.033Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5070,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:11.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5187,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:53.265Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-2bdc54196469b34b9c2c",
+          "file": "ui/storefront.spec.ts",
+          "line": 199,
+          "column": 1
+        },
+        {
+          "title": "UI-014 R-AUTH existing customer can log in and log out",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9797,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:38.579Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22740,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:34:03.264Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12278,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:15.827Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11921,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:56.236Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-2089ae02ef0fed38209c",
+          "file": "ui/storefront.spec.ts",
+          "line": 211,
+          "column": 1
+        },
+        {
+          "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7891,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:40.773Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 18632,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:34:03.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8722,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:17.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7472,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:58.471Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-d97419d02d3b3568a275",
+          "file": "ui/storefront.spec.ts",
+          "line": 223,
+          "column": 1
+        },
+        {
+          "title": "UI-016 R-ACCOUNT name edit persists after reload",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7250,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:48.403Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10729,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:34:22.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10373,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:25.750Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6082,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:38:05.967Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-f2f1c02f347e58556109",
+          "file": "ui/storefront.spec.ts",
+          "line": 230,
+          "column": 1
+        },
+        {
+          "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 36664,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:48.683Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 43829,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:34:26.029Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 43728,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:28.129Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 20650,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:38:08.182Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-91cf9b22e2d5f6e5478f",
+          "file": "ui/storefront.spec.ts",
+          "line": 246,
+          "column": 1
+        },
+        {
+          "title": "UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6549,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:31:55.680Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10226,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:34:33.197Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8607,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:36.149Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8172,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:38:12.074Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-a72fb37742a4d3469edd",
+          "file": "ui/storefront.spec.ts",
+          "line": 267,
+          "column": 1
+        },
+        {
+          "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22579,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:02.253Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 24835,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:34:43.449Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 30553,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:36:44.780Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7826,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:38:20.268Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-93262e0cb95353004929",
+          "file": "ui/storefront.spec.ts",
+          "line": 304,
+          "column": 1
+        },
+        {
+          "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6704,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:32:24.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9787,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:35:08.310Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9782,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:37:11.883Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-chromium",
+              "projectName": "mobile-chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5690,
+                  "errors": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T14:38:28.123Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-6c18dbd9f1337498d4f1",
+          "file": "ui/storefront.spec.ts",
+          "line": 335,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-12T14:30:25.900Z",
+    "duration": 488099.329,
+    "expected": 116,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

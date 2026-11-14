@@ -1,0 +1,28 @@
+# Copy relevant steps into your existing authorized test workflow.
+# FlakeGuard must be installed from a trusted checkout/package, never untrusted PR code with secrets.
+name: Example report analysis
+on: workflow_dispatch
+permissions:
+  contents: read
+  actions: read
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - run: pip install -r requirements.lock && pip install --no-deps -e .
+      - name: Analyze an existing report against persistent history
+        env:
+          DATABASE_URL: ${{ secrets.FLAKEGUARD_DATABASE_URL }}
+        run: |
+          flakeguard migrate
+          flakeguard import path/to/results.json --repository "$GITHUB_REPOSITORY" --run-id "$GITHUB_RUN_ID" --run-attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" --commit-sha "$GITHUB_SHA" > import.json
+          RUN_ID=$(python -c "import json; print(json.load(open('import.json'))['run_id'])")
+          flakeguard summary "$RUN_ID" --github-summary --output quality-summary.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-summary
+          path: quality-summary.md

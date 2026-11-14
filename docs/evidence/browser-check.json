@@ -1,0 +1,36 @@
+{
+  "pages": [
+    {
+      "page": "Overview",
+      "screenshot": "overview.png",
+      "rendered": true,
+      "script_completed": true
+    },
+    {
+      "page": "Flaky Tests",
+      "screenshot": "flaky-tests.png",
+      "rendered": true,
+      "script_completed": true
+    },
+    {
+      "page": "Failure Analysis",
+      "screenshot": "failure-analysis.png",
+      "rendered": true,
+      "script_completed": true
+    },
+    {
+      "page": "Test Details",
+      "screenshot": "test-details.png",
+      "rendered": true,
+      "script_completed": true
+    },
+    {
+      "page": "CI Integration",
+      "screenshot": "ci-integration.png",
+      "rendered": true,
+      "script_completed": true
+    }
+  ],
+  "browser_upload_to_api_and_postgresql": true,
+  "javascript_errors": []
+}

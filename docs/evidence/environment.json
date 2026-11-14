@@ -1,0 +1,6 @@
+{
+  "postgresql_version": "18.6",
+  "python": "3.13.0",
+  "os": "Windows",
+  "docker_available": false
+}

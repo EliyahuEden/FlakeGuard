@@ -1,0 +1,264 @@
+{
+  "config": {
+    "rootDir": ".",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "api",
+        "name": "api",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "integration",
+        "name": "integration",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/integration/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "mobile-chromium",
+        "name": "mobile-chromium",
+        "testDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "chromium",
+        "testDir": "<commerceguard>",
+        "snapshotDir": "<commerceguard>",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "<commerceguard>\\.runtime\\defects\\CG-D01\\injected\\html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "<commerceguard>\\docs\\evidence\\redesign\\defects\\CG-D01\\injected\\results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "<commerceguard>\\.runtime\\defects\\CG-D01\\injected\\junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [
+      "@regression"
+    ],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\storefront.spec.ts",
+      "file": "ui/storefront.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UI-004 R-CART quantity update recalculates displayed total",
+          "ok": false,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 24765,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('cart-total')\nExpected: \u001b[32m\"€3\u001b[7m0\u001b[27m.00\"\u001b[39m\nReceived: \u001b[31m\"€3\u001b[7m1\u001b[27m.00\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-total') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-total')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"30\" class=\"txt-xlarge-plus\" data-testid=\"cart-total\">€31.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"€31.00\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('cart-total')\nExpected: \u001b[32m\"€3\u001b[7m0\u001b[27m.00\"\u001b[39m\nReceived: \u001b[31m\"€3\u001b[7m1\u001b[27m.00\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-total') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-total')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"30\" class=\"txt-xlarge-plus\" data-testid=\"cart-total\">€31.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"€31.00\"\u001b[22m\n\n    at CartPage.expectTotal (<commerceguard>\\src\\pages\\storefront.ts:72:55)\n    at <commerceguard>\\ui\\storefront.spec.ts:71:3",
+                    "location": {
+                      "file": "<commerceguard>\\src\\pages\\storefront.ts",
+                      "column": 55,
+                      "line": 72
+                    }
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<commerceguard>\\src\\pages\\storefront.ts",
+                        "column": 55,
+                        "line": 72
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('cart-total')\nExpected: \u001b[32m\"€3\u001b[7m0\u001b[27m.00\"\u001b[39m\nReceived: \u001b[31m\"€3\u001b[7m1\u001b[27m.00\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-total') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-total')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"30\" class=\"txt-xlarge-plus\" data-testid=\"cart-total\">€31.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"€31.00\"\u001b[22m\n\n\n   at ..\\src\\pages\\storefront.ts:72\n\n  70 |       String(total),\n  71 |     )\n> 72 |     await expect(this.page.getByTestId(\"cart-total\")).toHaveText(\n     |                                                       ^\n  73 |       new Intl.NumberFormat(\"en-US\", {\n  74 |         style: \"currency\",\n  75 |         currency: \"EUR\",\n    at CartPage.expectTotal (<commerceguard>\\src\\pages\\storefront.ts:72:55)\n    at <commerceguard>\\ui\\storefront.spec.ts:71:3"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-12T03:30:33.455Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "<commerceguard>\\.runtime\\defects\\CG-D01\\injected\\artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "<commerceguard>\\.runtime\\defects\\CG-D01\\injected\\artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<commerceguard>\\.runtime\\defects\\CG-D01\\injected\\artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "<commerceguard>\\.runtime\\defects\\CG-D01\\injected\\artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<commerceguard>\\src\\pages\\storefront.ts",
+                    "column": 55,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-c8d5da6c129725259c21",
+          "file": "ui/storefront.spec.ts",
+          "line": 60,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-12T03:30:31.368Z",
+    "duration": 27948.947,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

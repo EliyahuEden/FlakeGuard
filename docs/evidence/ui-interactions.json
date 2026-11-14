@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "Keyboard arrow navigation changes workspace page",
+    "Header import action opens the working upload form",
+    "Repository/status filters query real API counts (720 total / 144 failed)",
+    "CSV export contains 24 scoped reliability cohorts and provenance labels",
+    "390px mobile layout: collapsible navigation, two-column metric grid, no page overflow"
+  ],
+  "passed": 5
+}

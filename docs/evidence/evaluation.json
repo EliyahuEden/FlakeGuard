@@ -1,0 +1,287 @@
+{
+  "python": "3.13.0",
+  "platform": "Windows",
+  "dataset": {
+    "provenance": "synthetic seed 2026, 30 daily runs, two explicit browsers",
+    "metrics": {
+      "total_executions": 720,
+      "eligible_executions": 600,
+      "passed": 456,
+      "failed": 144,
+      "skipped": 60,
+      "excluded": 120,
+      "pass_rate": 0.76,
+      "failure_rate": 0.24,
+      "first_attempt_observations": 600,
+      "first_attempt_pass_rate": 0.7,
+      "known_retry_observations": 600,
+      "initially_failed_with_retries": 36,
+      "retry_recoveries": 36,
+      "retry_recovery_rate": 1.0,
+      "average_duration_ms": 211.70445,
+      "suspected_flaky_tests": 6
+    },
+    "detected_scenario_names": [
+      "connection recovery",
+      "shared-state contamination",
+      "timing recovery"
+    ],
+    "expected_intermittent_scenarios": [
+      "connection recovery",
+      "fixture setup failure",
+      "shared-state contamination",
+      "timing recovery"
+    ],
+    "scenario_precision": 1.0,
+    "scenario_recall": 0.75,
+    "note": "Scenario-level evidence of intermittency, not proof of test-code defects. Metrics meaningful only after the standard demo."
+  },
+  "classification": {
+    "provenance": "synthetic injected diagnostic cases; authored evaluation set, not real-world accuracy",
+    "cases": 32,
+    "accuracy": 0.90625,
+    "macro_precision": 0.9318181818181819,
+    "macro_recall": 0.90625,
+    "confusion_matrix_rows_actual_columns_predicted": {
+      "suspected_application": {
+        "suspected_application": 7,
+        "suspected_automation": 0,
+        "suspected_infrastructure": 0,
+        "unknown": 1
+      },
+      "suspected_automation": {
+        "suspected_application": 0,
+        "suspected_automation": 7,
+        "suspected_infrastructure": 0,
+        "unknown": 1
+      },
+      "suspected_infrastructure": {
+        "suspected_application": 0,
+        "suspected_automation": 0,
+        "suspected_infrastructure": 7,
+        "unknown": 1
+      },
+      "unknown": {
+        "suspected_application": 0,
+        "suspected_automation": 0,
+        "suspected_infrastructure": 0,
+        "unknown": 8
+      }
+    },
+    "per_class": {
+      "suspected_application": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "support": 8
+      },
+      "suspected_automation": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "support": 8
+      },
+      "suspected_infrastructure": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "support": 8
+      },
+      "unknown": {
+        "precision": 0.7272727272727273,
+        "recall": 1.0,
+        "f1": 0.8421052631578948,
+        "support": 8
+      }
+    },
+    "predictions": [
+      {
+        "id": "app-1",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "app-2",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "app-3",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "app-4",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "app-5",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "app-6",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "app-7",
+        "actual": "suspected_application",
+        "predicted": "unknown"
+      },
+      {
+        "id": "app-8",
+        "actual": "suspected_application",
+        "predicted": "suspected_application"
+      },
+      {
+        "id": "auto-1",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "auto-2",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "auto-3",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "auto-4",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "auto-5",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "auto-6",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "auto-7",
+        "actual": "suspected_automation",
+        "predicted": "unknown"
+      },
+      {
+        "id": "auto-8",
+        "actual": "suspected_automation",
+        "predicted": "suspected_automation"
+      },
+      {
+        "id": "infra-1",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "infra-2",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "infra-3",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "infra-4",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "infra-5",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "infra-6",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "infra-7",
+        "actual": "suspected_infrastructure",
+        "predicted": "unknown"
+      },
+      {
+        "id": "infra-8",
+        "actual": "suspected_infrastructure",
+        "predicted": "suspected_infrastructure"
+      },
+      {
+        "id": "unknown-1",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-2",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-3",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-4",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-5",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-6",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-7",
+        "actual": "unknown",
+        "predicted": "unknown"
+      },
+      {
+        "id": "unknown-8",
+        "actual": "unknown",
+        "predicted": "unknown"
+      }
+    ],
+    "limitation": "Small authored diagnostic set, not independently held out. Rules and text cases share design assumptions; no claim of production accuracy."
+  },
+  "fingerprinting": {
+    "provenance": "12 synthetic labeled diagnostic pairs, exact-text grouping only",
+    "pairs": 12,
+    "true_positive": 6,
+    "false_positive": 0,
+    "false_negative": 0,
+    "true_negative": 6,
+    "precision": 1.0,
+    "recall": 1.0,
+    "limitation": "Evaluates normalization examples, not shared root-cause detection."
+  },
+  "import_benchmark": {
+    "database": "postgresql",
+    "executions": 1000,
+    "verified_rows_before_rollback": 1000,
+    "duplicate_reimport_count": 1000,
+    "seconds": 8.6514,
+    "executions_per_second": 115.59,
+    "duplicate_seconds": 0.0557,
+    "scope": "Single-process parse, normalize, insert, and flush; savepoint rolled back after verification; excludes outer commit, network transfer, and concurrent writers."
+  },
+  "observations_by_provenance": {
+    "synthetic": 720,
+    "injected": 74,
+    "real": 118
+  }
+}

@@ -1,0 +1,49 @@
+name: Platform validation
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: flakeguard
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: flakeguard_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U flakeguard -d flakeguard_test"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    env:
+      DATABASE_URL: postgresql+psycopg://flakeguard@localhost:5432/flakeguard_test
+      FLAKEGUARD_TEST_DATABASE_URL: postgresql+psycopg://flakeguard@localhost:5432/flakeguard_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements-dev.lock && pip install --no-deps -e .
+      - run: ruff check . && ruff format --check .
+      - run: mypy src/flakeguard
+      - run: flakeguard migrate && alembic check
+      - run: pytest --cov=flakeguard --cov-report=term-missing --junitxml=platform-tests.xml
+      - run: flakeguard demo && flakeguard evaluate --output evaluation.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flakeguard-validation
+          path: |
+            platform-tests.xml
+            evaluation.json
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cp .env.example .env
+      - run: docker compose config --quiet && docker compose up --build -d --wait
+      - run: docker compose exec -T api flakeguard demo && curl --fail http://localhost:8000/health && curl --fail http://localhost:8501/_stcore/health
+      - if: always()
+        run: docker compose logs && docker compose down -v
