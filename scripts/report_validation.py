@@ -107,6 +107,18 @@ Twelve authored diagnostic pairs: six known text-equivalent pairs correctly grou
 
 See `COMMANDS_EXECUTED.md`, `TEST_STRATEGY.md`, and the raw JUnit/coverage/evaluation/browser artifacts for audit details.
 """
+hosted_file = evidence / "hosted-actions.json"
+if hosted_file.exists():
+    hosted = json.loads(hosted_file.read_text(encoding="utf-8"))
+    if hosted["conclusion"] == "success":
+        body = body.replace(
+            "- Docker image/Compose startup and Linux behavior: configuration and CI smoke job provided, not locally executed because Docker was unavailable.",
+            "- Docker image/Compose startup, PostgreSQL migrations, demo seeding, API/dashboard health, and cleanup passed on GitHub-hosted Linux. Docker remains unavailable on the local Windows machine.",
+        ).replace(
+            "- GitHub Actions workflow definitions have not been run on hosted Actions during this local build.",
+            f"- Hosted GitHub Actions validation passed: [{hosted['run_id']}]({hosted['url']}), code commit `{hosted['code_commit'][:8]}`. Both `validate` and `compose` jobs succeeded.",
+        )
+        body += f"\n## Hosted CI evidence\n\nRepository: [EliyahuEden/FlakeGuard](https://github.com/EliyahuEden/FlakeGuard). [Verified workflow run]({hosted['url']}); exact code commit `{hosted['code_commit']}`. Metadata and individual step outcomes are recorded in `evidence/hosted-actions.json`.\n"
 Path("docs/VALIDATION.md").write_text(body, encoding="utf-8")
 structure_path = Path("docs/FILE_STRUCTURE.md")
 structure_path.touch(exist_ok=True)

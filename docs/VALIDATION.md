@@ -68,11 +68,15 @@ Twelve authored diagnostic pairs: six known text-equivalent pairs correctly grou
 
 ## Unverified or incomplete scope
 
-- Docker image/Compose startup and Linux behavior: configuration and CI smoke job provided, not locally executed because Docker was unavailable.
+- Docker image/Compose startup, PostgreSQL migrations, demo seeding, API/dashboard health, and cleanup passed on GitHub-hosted Linux. Docker remains unavailable on the local Windows machine.
 - Live authenticated GitHub synchronization: implemented with transport/error/archive tests; no authorized live repository sync performed.
-- GitHub Actions workflow definitions have not been run on hosted Actions during this local build.
+- Hosted GitHub Actions validation passed: [43580648373](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373), code commit `3b74a76f`. Both `validate` and `compose` jobs succeeded.
 - Browser-specific failures in the seeded history are synthetic, not executed Firefox/WebKit regressions.
 - No PR-comment writer, scheduled background sync, artifact file hosting, multi-user authorization, calibrated classifier, or deployment.
 - Real CommerceGuard reports verify ingestion, not real-world classification accuracy; CommerceGuard was not rerun.
 
 See `COMMANDS_EXECUTED.md`, `TEST_STRATEGY.md`, and the raw JUnit/coverage/evaluation/browser artifacts for audit details.
+
+## Hosted CI evidence
+
+Repository: [EliyahuEden/FlakeGuard](https://github.com/EliyahuEden/FlakeGuard). [Verified workflow run](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373); exact code commit `3b74a76fbe53ebca7fe34c2592f8a62662090030`. Metadata and individual step outcomes are recorded in `evidence/hosted-actions.json`.

@@ -30,6 +30,7 @@ docs/evidence/commerceguard.json
 docs/evidence/coverage.json
 docs/evidence/environment.json
 docs/evidence/evaluation.json
+docs/evidence/hosted-actions.json
 docs/evidence/live-api-tests.xml
 docs/evidence/platform-tests.xml
 docs/evidence/sample-summary.md

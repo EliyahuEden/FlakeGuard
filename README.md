@@ -29,7 +29,7 @@ docker compose exec api python scripts/import_examples.py
 
 Open [the dashboard](http://127.0.0.1:8501) and [the OpenAPI explorer](http://127.0.0.1:8000/docs). Migrations run before API startup. PostgreSQL data persists in a named volume. The dashboard accesses the API through the Compose service network.
 
-The Docker configuration is supplied with a CI smoke job; Docker was unavailable on the development machine, so the image and Compose startup have **not been locally executed**. The native Python/PostgreSQL workflow below was executed.
+Docker Compose startup, migrations, demo seeding, API/dashboard health, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373). Docker remains unavailable on the local Windows machine; the native Python/PostgreSQL workflow below was also executed.
 
 ### Native Python and PostgreSQL
 
@@ -266,7 +266,7 @@ python -m playwright install chromium
 python scripts/browser_check.py
 ```
 
-The browser check visits every page, saves screenshots, uploads a report through the UI, and verifies API persistence. The upload uses a reserved `e2e/browser-validation` repository. See [test strategy](docs/TEST_STRATEGY.md) for isolation, coverage scope, and regression cases. CI defines PostgreSQL checks and a separate Docker Compose smoke job; no external CI result is claimed until the workflow actually runs.
+The browser check visits every page, saves screenshots, uploads a report through the UI, and verifies API persistence. The upload uses a reserved `e2e/browser-validation` repository. See [test strategy](docs/TEST_STRATEGY.md) for isolation, coverage scope, and regression cases. Both the PostgreSQL validation and Docker Compose jobs passed in [the recorded hosted workflow](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373).
 
 The recorded PostgreSQL validation results and exact coverage scope are in [the complete validation report](docs/VALIDATION.md). All five completed dashboard pages passed browser verification; `scripts/ui_interactions.py` also checks keyboard navigation, API-backed filters, CSV export, and the mobile layout. Browser/CLI subprocess execution is tracked separately from pytest line coverage.
 
@@ -279,7 +279,7 @@ The recorded PostgreSQL validation results and exact coverage scope are in [the 
 - GitHub sync uses a bounded recent-run window, no scheduler or continuation cursor. Rate-limit errors expose safe retry metadata; no automatic long sleeps. Changes to an artifact on an already processed run are not automatically revisited.
 - Artifact **metadata** is stored; screenshots/videos/traces are not hosted or opened by the server. CI run links lead to authorized diagnostic downloads.
 - Diagnostic redaction handles common credential formats, not arbitrary business secrets. Treat reports as sensitive internal engineering data.
-- Docker/Linux startup and live authenticated GitHub sync remain unverified locally. Browser-specific demo behavior is synthetic. CommerceGuard outputs are existing executions, not a fresh CommerceGuard run.
+- Hosted Linux/PostgreSQL and Docker Compose CI are verified. Live authenticated GitHub artifact synchronization and public application hosting remain unverified. Browser-specific demo behavior is synthetic. CommerceGuard outputs are existing executions, not a fresh CommerceGuard run.
 
 Future work: producer-specific retry-aware JUnit adapters, larger independently labeled evaluation sets, query pagination/materialized analytics, background sync checkpoints, authenticated artifact storage, and identity migration for test renames.
 

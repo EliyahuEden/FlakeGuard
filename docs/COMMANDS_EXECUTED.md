@@ -81,3 +81,5 @@ git push -u origin main
 ```
 
 Repository creation used the official GitHub REST API with the already configured Git Credential Manager credential held only in memory. Git push uses the normal credential helper; no credential is embedded in source, command arguments, a remote URL, or documentation. Final publication and hosted-CI status are recorded separately from the original local-only implementation above. Hosting providers were investigated and connections requested; no paid resource or external application deployment was created.
+
+Public push `3b74a76fbe53ebca7fe34c2592f8a62662090030` passed [hosted workflow 43580648373](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373): both `validate` (Linux/PostgreSQL/tests/lint/types/evaluation) and `compose` (Docker build/startup/migrations/demo/health/cleanup) completed successfully. The read-only HTTP guard is regression-tested. Browser interaction checks passed for keyboard navigation, header routing, scoped counts, CSV export, and a 390px mobile layout.
