@@ -29,7 +29,7 @@ docker compose exec api python scripts/import_examples.py
 
 Open [the workspace](http://127.0.0.1:8000) and [the OpenAPI explorer](http://127.0.0.1:8000/docs). Migrations run before API startup. PostgreSQL data persists in a named volume. The image builds the React app in a Node stage and serves it from the API container.
 
-Docker Compose startup, migrations, demo seeding, health checks, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373) for the previous Streamlit revision. The React image and the updated workflow have been verified locally (typecheck, unit tests, production build, 104 passed and 2 skipped pytest tests, browser checks) but have not yet run in hosted CI; Docker remains unavailable on the local Windows machine.
+Docker Compose startup, migrations, demo seeding, health checks, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373) for the previous Streamlit revision. The React revision then passed hosted CI as well, in [run 43835287908](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43835287908): frontend typecheck, Vitest and production build, the Python suite, and the Docker Compose job that builds the React image and checks `/health`, `/config` and the served page. The browser and axe checks were run locally against the SQLite demo, not in CI; Docker remains unavailable on the local Windows machine.
 
 ### Native Python and PostgreSQL
 

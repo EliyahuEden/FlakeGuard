@@ -1,6 +1,6 @@
 # Verified validation results
 
-> **Frontend update (React rewrite):** the Streamlit UI described in the 14 November record below was replaced by a React + TypeScript workspace. Local re-verification after the rewrite: 104 passed / 2 skipped pytest tests, ruff and strict mypy clean, `npm run typecheck`, 5 Vitest tests and a production build passing, and `scripts/browser_check.py` / `scripts/ui_interactions.py` passing against the SQLite demo with zero axe-core A/AA violations on five pages. Hosted CI has not yet run on this revision. The dated figures below are unchanged historical evidence.
+> **Frontend update (React rewrite):** the Streamlit UI described in the 14 November record below was replaced by a React + TypeScript workspace. Local re-verification after the rewrite: 104 passed / 2 skipped pytest tests, ruff and strict mypy clean, `npm run typecheck`, 5 Vitest tests and a production build passing, and `scripts/browser_check.py` / `scripts/ui_interactions.py` passing against the SQLite demo with zero axe-core A/AA violations on five pages. Hosted CI then passed on this revision (run 43835287908: both the validation and Docker Compose jobs). The dated figures below are unchanged historical evidence.
 
 Recorded on 14 November 2026. Raw evidence lives beside this document in `evidence/`.
 
