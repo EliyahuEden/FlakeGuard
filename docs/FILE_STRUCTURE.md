@@ -8,7 +8,7 @@ Source, configuration, fixtures, tests, and deliverable evidence. Local secrets,
 .gitattributes
 .github/workflows/ci.yml
 .gitignore
-.streamlit/config.toml
+web/ (React + TypeScript workspace: src/, vite.config.ts, tests)
 Dockerfile
 LICENSE
 README.md

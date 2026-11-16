@@ -4,7 +4,7 @@
 
 “CI systems produce a pass or fail, but engineers still have to decide whether a failure is a product regression, an unreliable test, or a broken environment. Retries often hide the history that would help answer that question.
 
-I built FlakeGuard as a Python modular monolith. FastAPI exposes ingestion and analysis, PostgreSQL stores normalized runs, executions and retry attempts, and a Streamlit dashboard visualizes the same API results. It imports standard Playwright JSON and JUnit XML through a CLI, HTTP API, or a read-only GitHub Actions artifact client.
+I built FlakeGuard as a Python modular monolith. FastAPI exposes ingestion and analysis, PostgreSQL stores normalized runs, executions and retry attempts, and a typed React and TypeScript workspace, served by the same FastAPI process, visualizes the same API results. It imports standard Playwright JSON and JUnit XML through a CLI, HTTP API, or a read-only GitHub Actions artifact client.
 
 The hardest parts were preserving the semantics of different report formats, making ingestion idempotent and atomic, and avoiding misleading analytics. JUnit usually cannot tell us about retries, so those metrics stay unknown. I separate branches and environments before scoring, and distinguish a consistent regression from intermittent pass/fail behavior.
 

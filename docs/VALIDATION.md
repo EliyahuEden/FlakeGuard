@@ -1,5 +1,7 @@
 # Verified validation results
 
+> **Frontend update (React rewrite):** the Streamlit UI described in the 14 November record below was replaced by a React + TypeScript workspace. Local re-verification after the rewrite: 104 passed / 2 skipped pytest tests, ruff and strict mypy clean, `npm run typecheck`, 5 Vitest tests and a production build passing, and `scripts/browser_check.py` / `scripts/ui_interactions.py` passing against the SQLite demo with zero axe-core A/AA violations on five pages. Hosted CI has not yet run on this revision. The dated figures below are unchanged historical evidence.
+
 Recorded on 14 November 2026. Raw evidence lives beside this document in `evidence/`.
 
 ## Environment and checks
@@ -7,7 +9,7 @@ Recorded on 14 November 2026. Raw evidence lives beside this document in `eviden
 - Windows, CPython 3.13.0, actual PostgreSQL 18.6 on loopback.
 - Platform suite: **101 passed, 1 skipped, zero failures/errors**, 19.49 seconds. The skipped item is the separately enabled live API check.
 - Live HTTP suite: **1 passed**, against the seeded PostgreSQL-backed API.
-- Chromium: **5/5 pages rendered**, zero JavaScript errors, report uploaded through Streamlit and retrieved through the API/PostgreSQL.
+- Chromium: **5/5 pages rendered**, zero JavaScript errors, report uploaded through the original Streamlit UI and retrieved through the API/PostgreSQL.
 - Ruff lint and formatting passed; strict mypy passed for 15 backend/service modules (dashboard excluded from strict typing).
 - Alembic migration and PostgreSQL schema-drift checks passed. `pip check` found no incompatible installed requirements.
 - Whole-package pytest line coverage: **71.62%** (1176/1642 statements). Browser/CLI subprocess coverage is not combined into this figure.

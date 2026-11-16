@@ -10,7 +10,7 @@ Built for QA Automation, SDET, and development teams that repeatedly investigate
 
 ![FlakeGuard overview](docs/evidence/screenshots/overview.png)
 
-The graphite workspace follows the supplied visual direction: compact navigation, soft black cards, white trend charts, a filter drawer, and responsive layouts. See [UI design and interaction validation](docs/UI_DESIGN.md) and [publication/hosting options](docs/DEPLOYMENT.md).
+The workspace is a typed **React + TypeScript** single-page app (Vite, Recharts) served by the same FastAPI process, so one origin and one port run everything. It keeps the supplied graphite direction while adding keyboard-first navigation, sortable tables, a master-detail evidence view, skeleton/empty/error states, and a 390px mobile layout. See [UI design and interaction validation](docs/UI_DESIGN.md) and [publication/hosting options](docs/DEPLOYMENT.md).
 
 ## Try it locally
 
@@ -27,9 +27,9 @@ docker compose exec api flakeguard demo --with-local
 docker compose exec api python scripts/import_examples.py
 ```
 
-Open [the dashboard](http://127.0.0.1:8501) and [the OpenAPI explorer](http://127.0.0.1:8000/docs). Migrations run before API startup. PostgreSQL data persists in a named volume. The dashboard accesses the API through the Compose service network.
+Open [the workspace](http://127.0.0.1:8000) and [the OpenAPI explorer](http://127.0.0.1:8000/docs). Migrations run before API startup. PostgreSQL data persists in a named volume. The image builds the React app in a Node stage and serves it from the API container.
 
-Docker Compose startup, migrations, demo seeding, API/dashboard health, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373). Docker remains unavailable on the local Windows machine; the native Python/PostgreSQL workflow below was also executed.
+Docker Compose startup, migrations, demo seeding, health checks, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373) for the previous Streamlit revision. The React image and the updated workflow have been verified locally (typecheck, unit tests, production build, 104 passed and 2 skipped pytest tests, browser checks) but have not yet run in hosted CI; Docker remains unavailable on the local Windows machine.
 
 ### Native Python and PostgreSQL
 
@@ -48,11 +48,15 @@ python scripts/import_examples.py
 uvicorn flakeguard.api:app --host 127.0.0.1 --port 8000
 ```
 
-In a second terminal with the virtual environment activated:
+Build the workspace once (Node 20.19+ or 22) and the API serves it at <http://127.0.0.1:8000>:
 
 ```powershell
-streamlit run src/flakeguard/dashboard.py --server.address 127.0.0.1 --server.port 8501
+cd web
+npm ci
+npm run build   # typechecks, then writes src/flakeguard/web
 ```
+
+For frontend development run `npm run dev` in `web/` (port 5173, proxying the API on 8000). Without a build the API still works; only the browser workspace is absent.
 
 Linux/macOS environment setup:
 
@@ -64,7 +68,7 @@ pip install --no-deps -e .
 cp .env.example .env
 ```
 
-Use the same `flakeguard`, `uvicorn`, and `streamlit` commands as above after configuring PostgreSQL. An optional Windows helper can initialize a separate local cluster using an existing PostgreSQL binary distribution:
+Use the same `flakeguard` and `uvicorn` commands as above after configuring PostgreSQL. An optional Windows helper can initialize a separate local cluster using an existing PostgreSQL binary distribution:
 
 ```powershell
 # Run before creating .env; it generates a local password into ignored .env.
@@ -89,7 +93,7 @@ Without `.env` or `DATABASE_URL`, the explicit convenience fallback is SQLite in
 | Analytics | Date/repository/branch/suite/browser/environment/status/provenance filters, duration and reliability trends, newly failing observations |
 | GitHub Actions | Read-only manual synchronization, pagination, report ZIP import, processed-run state and retryable error state |
 | CI feedback | Generated Markdown and `$GITHUB_STEP_SUMMARY` output; no quality-gate bypass |
-| Dashboard | Five functional Streamlit pages with Plotly charts and execution diagnostics |
+| Workspace | Five React pages: overview, flaky tests with evidence panel, failure patterns, per-test history, CI integration; Recharts trends and execution diagnostics |
 | Demonstration | Seeded report history, actual controlled pytest executions, actual CommerceGuard report projections |
 
 ## Architecture and data flow
@@ -105,11 +109,11 @@ flowchart LR
     TX --> DB[(PostgreSQL)]
     DB --> Analysis[Reliability / fingerprints / heuristics]
     Analysis --> API[FastAPI + OpenAPI]
-    API --> UI[Streamlit + Plotly]
+    API --> UI[React + TypeScript workspace]
     Analysis --> Summary[Markdown / Actions job summary]
 ```
 
-A modular monolith keeps parsing, transactions, external I/O, and analysis independently testable. The dashboard is an HTTP client, with no database access or duplicate scoring logic. No ML model or paid API is involved; deterministic methods provide an inspectable baseline.
+A modular monolith keeps parsing, transactions, external I/O, and analysis independently testable. The React workspace is an HTTP client of the same API, with no database access or duplicate scoring logic; the browser formats numbers but never recomputes them. No ML model or paid API is involved; deterministic methods provide an inspectable baseline.
 
 The database separates repositories, CI runs, report receipts, test identities, logical executions, individual attempts, failure patterns, artifacts, synchronization state, and ingestion errors. See [database design](docs/DATA_MODEL.md), [architecture decisions](docs/ARCHITECTURE.md), and the [complete file listing](docs/FILE_STRUCTURE.md).
 
@@ -130,7 +134,7 @@ curl -X POST http://127.0.0.1:8000/api/imports \
   -F 'file=@results.json'
 ```
 
-If `FLAKEGUARD_API_KEY` is set, send `X-API-Key` for all `/api` reads and writes. The dashboard reads that secret server-side. See `.env.example` for every setting. API validation errors omit submitted values, and imported diagnostics redact common credential patterns; avoid putting secrets in test diagnostics in the first place.
+If `FLAKEGUARD_API_KEY` is set, send `X-API-Key` for all `/api` reads and writes. The workspace asks for the key once per browser tab (kept in `sessionStorage`, sent only to its own origin) and drops it on a 401. `/config` is the only unauthenticated endpoint and exposes just the read-only and key-required flags. See `.env.example` for every setting. API validation errors omit submitted values, and imported diagnostics redact common credential patterns; avoid putting secrets in test diagnostics in the first place.
 
 ### Report semantics
 
@@ -268,7 +272,7 @@ python scripts/browser_check.py
 
 The browser check visits every page, saves screenshots, uploads a report through the UI, and verifies API persistence. The upload uses a reserved `e2e/browser-validation` repository. See [test strategy](docs/TEST_STRATEGY.md) for isolation, coverage scope, and regression cases. Both the PostgreSQL validation and Docker Compose jobs passed in [the recorded hosted workflow](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373).
 
-The recorded PostgreSQL validation results and exact coverage scope are in [the complete validation report](docs/VALIDATION.md). All five completed dashboard pages passed browser verification; `scripts/ui_interactions.py` also checks keyboard navigation, API-backed filters, CSV export, and the mobile layout. Browser/CLI subprocess execution is tracked separately from pytest line coverage.
+The recorded PostgreSQL validation results and exact coverage scope are in [the complete validation report](docs/VALIDATION.md). All five pages passed browser verification with **zero axe-core violations** (WCAG 2.0/2.1/2.2 A and AA automated rules; not a certification); `scripts/ui_interactions.py` also checks the skip link, keyboard navigation with heading focus, API-backed filters, CSV export, evidence deep links, and the 390px layout. The frontend has its own `npm run typecheck`, `npm test` (Vitest) and `npm run build` gates in CI. Browser/CLI subprocess execution is tracked separately from pytest line coverage.
 
 ## Known limitations and next steps
 

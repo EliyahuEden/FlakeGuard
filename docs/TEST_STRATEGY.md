@@ -8,7 +8,7 @@
 | Integration | Transactional persistence, duplicates/conflicts, multipart API, auth/allowlist, filters, actual CommerceGuard projections, mocked GitHub transports, archive boundaries | Fresh schema per test; no network for mocked GitHub |
 | PostgreSQL | Actual migrated relational persistence, retry relationships, duplicate constraints | Isolated `flakeguard_test` database; outer transaction rollback |
 | Live API | Seeded PostgreSQL data queried over actual HTTP; exact known metric denominators and summary generation | Opt-in `FLAKEGUARD_E2E=1`; services already running |
-| Browser | All five Streamlit pages, real charts/tables, UI report upload and API persistence, JavaScript errors, screenshots | Real headless Chromium + API + PostgreSQL |
+| Browser | All five React pages, axe-core WCAG A/AA rules, real charts/tables, UI report upload and API persistence, JavaScript errors, screenshots | Real headless Chromium + API + PostgreSQL |
 | Demonstration/evaluation | Generated reports through the same ingestion path; actual failing pytest reports; classification confusion matrix and import benchmark | Explicit synthetic/injected/real provenance |
 
 ## Commands

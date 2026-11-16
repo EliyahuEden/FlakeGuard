@@ -18,12 +18,11 @@ Publishing source code and running GitHub Actions do not deploy an application s
 ```mermaid
 flowchart LR
     Visitor[Portfolio visitor] --> TLS[HTTPS / hosting provider]
-    TLS --> Dashboard[Streamlit dashboard]
-    Dashboard -->|server-side API key| API[FastAPI]
+    TLS --> API[FastAPI + bundled React workspace]
     API --> DB[(Dedicated demo PostgreSQL)]
 ```
 
-Use a dedicated demo database. Initialize it through the real CLI ingestion pipeline, then make the HTTP-facing services read-only:
+Use a dedicated demo database. Initialize it through the real CLI ingestion pipeline, then make the HTTP-facing service read-only (`FLAKEGUARD_READ_ONLY=true`; the workspace then labels itself a read-only demonstration):
 
 ```bash
 flakeguard migrate
@@ -58,28 +57,21 @@ pip install -r requirements.lock
 pip install --no-deps .
 ```
 
-API start command (after migration/seed setup):
+Start command (after migration/seed setup and `npm run build` in `web/`, or use the Docker image, which builds the workspace in its own stage):
 
 ```bash
 uvicorn flakeguard.api:app --host 0.0.0.0 --port "$PORT"
 ```
 
-Dashboard start command:
-
-```bash
-streamlit run src/flakeguard/dashboard.py --server.address 0.0.0.0 --server.port "$PORT"
-```
-
-Health paths: API `/health`, dashboard `/_stcore/health`. Streamlit needs WebSocket support through the hosting provider/proxy. Keep API and dashboard secrets consistent. PostgreSQL is not exposed publicly by the local Compose configuration.
+Health path: `/health`. One process serves the API and the static workspace, so no WebSocket support or second service is needed. If `FLAKEGUARD_API_KEY` is set the workspace asks visitors for it, so leave it unset for a public read-only demo and rely on `FLAKEGUARD_READ_ONLY`. PostgreSQL is not exposed publicly by the local Compose configuration.
 
 ## Hosting options and actual tradeoffs
 
 | Option | Suitable use | Limit or requirement |
 |---|---|---|
-| Render Python services + a separate managed PostgreSQL provider such as Neon | Full Python API and Streamlit deployment with a dedicated demo DB | Requires connected hosting/database accounts; verify the selected plans, quotas, and spend controls before creating resources |
-| Streamlit Community Cloud + externally hosted API/database | Free-hosted dashboard while preserving the backend HTTP boundary | Community Cloud hosts the dashboard, not the existing three-service Compose deployment; API/database still need hosting |
+| Render Python services + a separate managed PostgreSQL provider such as Neon | Single web service (the Docker image) with a dedicated demo DB | Requires connected hosting/database accounts; verify the selected plans, quotas, and spend controls before creating resources |
 | Docker Compose on a VM | Straightforward full platform using the existing deployment shape | VM hosting may have ongoing cost; add TLS and authentication before writable/shared use |
-| Sites / static hosting | Documentation or a separately labeled static showcase | Does not directly host this Python/Streamlit/PostgreSQL stack |
+| Sites / static hosting | Documentation or a separately labeled static showcase | Hosts only a pre-built static copy of the React bundle; it cannot run the Python API or PostgreSQL |
 
 Current official provider documentation was checked on 14 November 2026. [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud) offers free app hosting. [Render free services](https://render.com/docs/free) sleep after 15 minutes of inactivity, lose local filesystem changes on restart, and share a monthly free-hour allowance. **Render's free PostgreSQL database expires after 30 days**, so it is a temporary demonstration option rather than a durable portfolio database. A sleeping API can delay the first dashboard request. Do not silently upgrade plans or assume a free tier is a production availability guarantee.
 

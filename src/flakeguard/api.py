@@ -1,5 +1,6 @@
 import hmac
 from datetime import datetime
+from pathlib import Path
 from typing import Annotated, Any
 
 from fastapi import (
@@ -15,6 +16,7 @@ from fastapi import (
 )
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, PlainTextResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import ValidationError
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
@@ -326,6 +328,39 @@ def summary(run_id: int, session: DB) -> str:
     return quality_summary(session, run_id)
 
 
+WEB_DIR = Path(__file__).parent / "web"
+CSP = (
+    "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; "
+    "script-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'"
+)
+SWAGGER_PATHS = ("/docs", "/redoc", "/openapi.json")
+
+
+class SecurityHeadersMiddleware:
+    """Hardens the bundled workspace; the generated API explorer loads its own CDN assets."""
+
+    def __init__(self, app: ASGIApp) -> None:
+        self.app = app
+
+    async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+        swagger = scope["path"].startswith(SWAGGER_PATHS)
+
+        async def hardened(message: Message) -> None:
+            if message["type"] == "http.response.start":
+                headers = list(message.get("headers", []))
+                headers.append((b"x-content-type-options", b"nosniff"))
+                headers.append((b"referrer-policy", b"no-referrer"))
+                if not swagger:
+                    headers.append((b"content-security-policy", CSP.encode()))
+                message["headers"] = headers
+            await send(message)
+
+        await self.app(scope, receive, hardened)
+
+
 def create_app() -> FastAPI:
     app = FastAPI(
         title="FlakeGuard",
@@ -333,7 +368,17 @@ def create_app() -> FastAPI:
         description="Explainable test reliability. Classifications are investigation suggestions, not root-cause claims.",
     )
     app.add_middleware(BodyLimitMiddleware)
+    app.add_middleware(SecurityHeadersMiddleware)
     app.include_router(router)
+
+    @app.get("/config", tags=["health"])
+    def config() -> dict[str, bool]:
+        """Public bootstrap data so the workspace knows whether to ask for an API key."""
+        settings = get_settings()
+        return {
+            "read_only": settings.flakeguard_read_only,
+            "auth_required": bool(settings.flakeguard_api_key.get_secret_value()),
+        }
 
     @app.get("/health", tags=["health"])
     def health(session: DB) -> dict[str, str]:
@@ -349,6 +394,9 @@ def create_app() -> FastAPI:
         errors = [{"loc": e["loc"], "msg": e["msg"], "type": e["type"]} for e in exc.errors()]
         return JSONResponse({"detail": errors}, status_code=422)
 
+    if (WEB_DIR / "index.html").is_file():
+        # Mounted last so every API route above takes precedence.
+        app.mount("/", StaticFiles(directory=WEB_DIR, html=True), name="workspace")
     return app
 
 

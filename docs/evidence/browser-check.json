@@ -4,33 +4,34 @@
       "page": "Overview",
       "screenshot": "overview.png",
       "rendered": true,
-      "script_completed": true
+      "axe_violations": 0
     },
     {
       "page": "Flaky Tests",
       "screenshot": "flaky-tests.png",
       "rendered": true,
-      "script_completed": true
+      "axe_violations": 0
     },
     {
       "page": "Failure Analysis",
       "screenshot": "failure-analysis.png",
       "rendered": true,
-      "script_completed": true
+      "axe_violations": 0
     },
     {
       "page": "Test Details",
       "screenshot": "test-details.png",
       "rendered": true,
-      "script_completed": true
+      "axe_violations": 0
     },
     {
       "page": "CI Integration",
       "screenshot": "ci-integration.png",
       "rendered": true,
-      "script_completed": true
+      "axe_violations": 0
     }
   ],
-  "browser_upload_to_api_and_postgresql": true,
+  "axe_ruleset": "wcag2a, wcag2aa, wcag21aa, wcag22aa (automated; not a certification)",
+  "browser_upload_to_api_and_database": true,
   "javascript_errors": []
 }

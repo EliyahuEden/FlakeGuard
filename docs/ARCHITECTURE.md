@@ -15,7 +15,7 @@ A red CI build describes an outcome, not a diagnosis. Retries can hide instabili
 | Stable semantic identity | Repository/project/suite/file/title hash survives line changes and commits; renames intentionally create new identities |
 | Versioned deterministic fingerprints | Reproducible and inspectable; text equivalence does not establish root cause |
 | Qualitative heuristic strength | Avoids misleading calibrated confidence claims without representative labeled data |
-| Streamlit HTTP client | Backend remains independently usable; UI has no DB credentials or alternate analysis path |
+| React workspace (HTTP client of the same API) | Backend remains independently usable; UI has no DB credentials or alternate analysis path |
 | Synchronous bounded GitHub sync | Manual operation is easy to inspect and test; long-term unattended synchronization needs a worker/checkpoint design |
 | No machine learning | No demonstrated incremental benefit over deterministic baselines in this dataset |
 

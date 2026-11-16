@@ -11,7 +11,7 @@ dependencies = [
   "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.10,<3",
   "pydantic-settings>=2.7,<3", "sqlalchemy>=2.1,<2.2", "alembic>=1.14,<2",
   "psycopg[binary]>=3.2,<4", "httpx>=0.28,<1", "python-multipart>=0.0.20,<1",
-  "defusedxml>=0.7.1,<1", "pandas>=2.2,<4", "streamlit>=1.41,<2", "plotly>=6,<7", "pytest>=9.2,<10",
+  "defusedxml>=0.7.1,<1", "pandas>=2.2,<4", "pytest>=9.2,<10",
 ]
 
 [project.optional-dependencies]
@@ -24,7 +24,7 @@ flakeguard = "flakeguard.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-flakeguard = ["assets/*.css"]
+flakeguard = ["web/*", "web/assets/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -43,8 +43,4 @@ ignore = ["E501", "B008"]
 python_version = "3.13"
 files = ["src/flakeguard"]
 strict = true
-exclude = ["dashboard.py"]
 
-[[tool.mypy.overrides]]
-module = ["plotly.*"]
-ignore_missing_imports = true

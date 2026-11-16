@@ -1,7 +1,7 @@
 # Evidence-based resume bullets
 
-- Built **FlakeGuard**, a Python/FastAPI/PostgreSQL test reliability platform with atomic Playwright/JUnit ingestion, observed retry histories, and a five-page Streamlit dashboard; validated ingestion of **720 synthetic, 72 executed injected pytest, and 119 actual CommerceGuard report records**.
+- Built **FlakeGuard**, a Python/FastAPI/PostgreSQL test reliability platform with atomic Playwright/JUnit ingestion, observed retry histories, and a five-page React/TypeScript workspace; validated ingestion of **720 synthetic, 72 executed injected pytest, and 119 actual CommerceGuard report records**.
 - Implemented explainable reliability scoring and versioned failure fingerprints; detected **3 of 4 injected intermittent scenario types** with **100% precision and 75% recall**, and measured **90.625% classification accuracy on 32 synthetic diagnostic cases**, explicitly documenting ambiguous cases and evaluation limits.
-- Engineered idempotent imports, defensive GitHub Actions artifact synchronization, and Markdown CI feedback; validated 101 platform tests locally, five dashboard pages and mobile interactions in Chromium, and successful hosted Linux/PostgreSQL and Docker Compose CI jobs.
+- Engineered idempotent imports, defensive GitHub Actions artifact synchronization, and Markdown CI feedback; validated 104 platform tests, Vitest/typecheck gates, five pages with zero automated axe violations and mobile interactions in Chromium, and earlier hosted Linux/PostgreSQL and Docker Compose CI jobs.
 
 These are implemented and measured project outcomes, not claims of production adoption or real-world root-cause accuracy. The GitHub artifact client is implemented and mocked-transport tested; no live authorized artifact synchronization or hosted application deployment is claimed. Hosted CI success is recorded with its code commit and workflow URL. See `VALIDATION.md` and `evidence/` for exact test counts, timing, and scope.
