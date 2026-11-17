@@ -1,6 +1,6 @@
 # Verified validation results
 
-> **Frontend update (React rewrite):** the Streamlit UI described in the 14 November record below was replaced by a React + TypeScript workspace. Local re-verification after the rewrite: 104 passed / 2 skipped pytest tests, ruff and strict mypy clean, `npm run typecheck`, 5 Vitest tests and a production build passing, and `scripts/browser_check.py` / `scripts/ui_interactions.py` passing against the SQLite demo with zero axe-core A/AA violations on five pages. Hosted CI then passed on this revision (run 43835287908: both the validation and Docker Compose jobs). The dated figures below are unchanged historical evidence.
+> **Frontend update (React rewrite):** the Streamlit UI described in the 14 November record below was replaced by a React + TypeScript workspace. Local re-verification after the rewrite: 104 passed / 2 skipped pytest tests, ruff and strict mypy clean, `npm run typecheck`, 5 Vitest tests and a production build passing, and `scripts/browser_check.py` / `scripts/ui_interactions.py` passing against the SQLite demo with zero axe-core A/AA violations on five pages. Hosted CI then passed on this revision (run 44028897584: both the validation and Docker Compose jobs). The dated figures below are unchanged historical evidence.
 
 Recorded on 14 November 2026. Raw evidence lives beside this document in `evidence/`.
 
@@ -71,7 +71,7 @@ Twelve authored diagnostic pairs: six known text-equivalent pairs correctly grou
 ## Unverified or incomplete scope
 
 - Docker image/Compose startup, PostgreSQL migrations, demo seeding, API/dashboard health, and cleanup passed on GitHub-hosted Linux. Docker remains unavailable on the local Windows machine.
-- Live authenticated GitHub synchronization: implemented with transport/error/archive tests; no authorized live repository sync performed.
+- Live authenticated GitHub synchronization: implemented with transport/error/archive tests, and exercised live on 17 November against hosted CommerceGuard regression runs (2 runs imported, 156 executions each; 1 run without the artifact recorded as a retryable error).
 - Hosted GitHub Actions validation passed: [43580648373](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373), code commit `3b74a76f`. Both `validate` and `compose` jobs succeeded.
 - Browser-specific failures in the seeded history are synthetic, not executed Firefox/WebKit regressions.
 - No PR-comment writer, scheduled background sync, artifact file hosting, multi-user authorization, calibrated classifier, or deployment.

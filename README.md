@@ -29,7 +29,7 @@ docker compose exec api python scripts/import_examples.py
 
 Open [the workspace](http://127.0.0.1:8000) and [the OpenAPI explorer](http://127.0.0.1:8000/docs). Migrations run before API startup. PostgreSQL data persists in a named volume. The image builds the React app in a Node stage and serves it from the API container.
 
-Docker Compose startup, migrations, demo seeding, health checks, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373) for the previous Streamlit revision. The React revision then passed hosted CI as well, in [run 43835287908](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43835287908): frontend typecheck, Vitest and production build, the Python suite, and the Docker Compose job that builds the React image and checks `/health`, `/config` and the served page. The browser and axe checks were run locally against the SQLite demo, not in CI; Docker remains unavailable on the local Windows machine.
+Docker Compose startup, migrations, demo seeding, health checks, and teardown passed in [hosted CI](https://github.com/EliyahuEden/FlakeGuard/actions/runs/43580648373) for the previous Streamlit revision. The React revision then passed hosted CI as well, in [run 44028897584](https://github.com/EliyahuEden/FlakeGuard/actions/runs/44028897584): frontend typecheck, Vitest and production build, the Python suite, and the Docker Compose job that builds the React image and checks `/health`, `/config` and the served page. The browser and axe checks were run locally against the SQLite demo, not in CI; Docker remains unavailable on the local Windows machine.
 
 ### Native Python and PostgreSQL
 
@@ -188,7 +188,7 @@ flakeguard summary 1 --output quality-summary.md
 flakeguard summary 1 --github-summary
 ```
 
-See [the workflow example](examples/github/quality-summary.yml) and [sample summary](docs/evidence/sample-summary.md). Keep the test step's original exit status: FlakeGuard never makes suspected flaky failures harmless. Authenticated synchronization is implemented and transport-tested, but has **not been exercised against a live authorized GitHub repository**. PR comments and scheduled background sync are not implemented.
+See [the workflow example](examples/github/quality-summary.yml) and [sample summary](docs/evidence/sample-summary.md). Keep the test step's original exit status: FlakeGuard never makes suspected flaky failures harmless. Authenticated synchronization is transport-tested and was also exercised live on 17 November against `EliyahuEden/CommerceGuard`: it downloaded the `playwright-json-results` artifact from two hosted regression runs and imported 156 executions from each, and recorded a third run without that artifact as a retryable error. It used a read-only-scope token in a local scratch database. PR comments and scheduled background sync are not implemented.
 
 ## Analysis methodology
 
@@ -283,7 +283,7 @@ The recorded PostgreSQL validation results and exact coverage scope are in [the 
 - GitHub sync uses a bounded recent-run window, no scheduler or continuation cursor. Rate-limit errors expose safe retry metadata; no automatic long sleeps. Changes to an artifact on an already processed run are not automatically revisited.
 - Artifact **metadata** is stored; screenshots/videos/traces are not hosted or opened by the server. CI run links lead to authorized diagnostic downloads.
 - Diagnostic redaction handles common credential formats, not arbitrary business secrets. Treat reports as sensitive internal engineering data.
-- Hosted Linux/PostgreSQL and Docker Compose CI are verified. Live authenticated GitHub artifact synchronization and public application hosting remain unverified. Browser-specific demo behavior is synthetic. CommerceGuard outputs are existing executions, not a fresh CommerceGuard run.
+- Hosted Linux/PostgreSQL and Docker Compose CI are verified. Public application hosting remains unverified (live GitHub artifact synchronization was verified once, as described above). Browser-specific demo behavior is synthetic. CommerceGuard outputs are existing executions, not a fresh CommerceGuard run.
 
 Future work: producer-specific retry-aware JUnit adapters, larger independently labeled evaluation sets, query pagination/materialized analytics, background sync checkpoints, authenticated artifact storage, and identity migration for test renames.
 
